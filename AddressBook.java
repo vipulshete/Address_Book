@@ -1,5 +1,8 @@
 package com.bridgelab.addressBook;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.*;
+
 public class AddressBook {
 	
 	public String firstname = "";
@@ -11,16 +14,38 @@ public class AddressBook {
 	public int zipCode = 0;
 	public int mobileNumber = 0000000000;
 	
+	public static Scanner sc = new Scanner(System.in);
+	
+	public static AddressBook addressBook = new AddressBook();
 	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Adress Book");
-		AddressBook addressBook = new AddressBook();
+		
+		int options = 0;
+		
+		System.out.println("\n" + "Select Opection");
+		System.out.println("1. Create contact" + "\n" );
+		
+		System.out.print("Enter opections : " ); 
+		options = sc.nextInt();
+		
+		if (options == 1) {
+
+			addressBook.createContacts();
+			addressBook.displayContact();
+		
+		}
+	
+		
+	}
+	
+	void addContact( ) {
 		addressBook.createContacts();
 		addressBook.displayContact();
 	}
 	
 	void createContacts() {
-		System.out.println("Enter the person details");
+		System.out.println("\n" + "Enter the person details" + "\n");
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("First Name : " ); 
@@ -52,11 +77,10 @@ public class AddressBook {
 		
 	}
 	
-	void displayContact() {
-		
+	 public void displayContact() {
+		 
 		System.out.print("\n" + "person details" + "\n");
-		
-		System.out.print("First name : " + firstname);
+		System.out.print("\n" + "First name : " + firstname);
 		System.out.print("\n" + "Last Name : " + lastname);
 		System.out.print("\n" + "Address : " + address);
 		System.out.print("\n" + "Mobile no. : " + mobileNumber); 
@@ -64,7 +88,6 @@ public class AddressBook {
 		System.out.print("\n" + "City : " + city); 
 		System.out.print("\n" + "State : " + state);
 		System.out.print("\n" + "zip code : " + zipCode);
-		
 		
 	}
 }

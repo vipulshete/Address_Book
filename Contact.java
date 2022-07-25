@@ -70,4 +70,9 @@ public class Contact {
 		
 	}
 	}
+
+	public void remove() {
+		// TODO Auto-generated method stub
+		
+	}
 }

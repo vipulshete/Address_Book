@@ -55,7 +55,8 @@ public class Address {
 			
 		}else if (options == 3) {
 			System.out.println("Delet contect");
-		
+			Contact contactForSurya = contactList.remove(2);// get Vipuls contact at index 1
+			example.printContactList(contactList);//
 		}else {
 			System.out.println("Please enterss correct opction");
 		}
